@@ -26,7 +26,6 @@ function cardCreator (array) {
 
     let headline = document.createElement("div")
     headline.classList.add("headline")
-    //Update Reference
     headline.textContent = array.headline
     card.appendChild(headline)
 
@@ -37,12 +36,10 @@ function cardCreator (array) {
     imgContainer.classList.add("img-container")
     
     let imgAuthor = document.createElement("img")
-    //Update Reference
     imgAuthor.src = array.authorPhoto
     imgContainer.appendChild(imgAuthor)
 
     let authorName = document.createElement("span")
-    //Update Reference
     authorName.textContent = array.authorName
 
     author.appendChild(imgContainer)
@@ -55,7 +52,11 @@ function cardCreator (array) {
 
 }
 
+//Select location to insert card component
+
 let cardsContainer = document.querySelector(".cards-container")
+
+//Create HTTPS request and promise to pull article data and create cards for each article
 
 axios.get("https://lambda-times-backend.herokuapp.com/articles")
     .then(resolve => {
